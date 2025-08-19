@@ -53,6 +53,7 @@
       padding: 0 20px;
     }
 
+    /* Hero */
     .hero {
       padding: 20px 0 40px;
       text-align: center;
@@ -95,6 +96,11 @@
       font-weight: 700;
       box-shadow: var(--shadow);
       border: 1px solid transparent;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      filter: brightness(1.05);
     }
 
     .btn-ghost {
@@ -103,23 +109,9 @@
       border: 1px solid var(--border);
     }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
-      margin: 14px 0;
-      box-shadow: var(--shadow);
-    }
-
+    /* Sections */
     .section {
-      padding: 44px 0;
+      padding: 20px 0;
     }
 
     .section h3 {
@@ -127,6 +119,7 @@
       font-size: 24px;
     }
 
+    /* Skills */
     .chip-list {
       display: flex;
       flex-wrap: wrap;
@@ -142,6 +135,61 @@
       background: var(--soft);
       border: 1px solid var(--border);
       color: var(--text);
+    }
+
+    /* Projects grid + uniform cards */
+    .projects-grid {
+      background: var(--soft);
+      /* או var(--accent) אם אתה רוצה כחול */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      /* רווח פנימי */
+      border-radius: 14px;
+      /* פינות מעוגלות */
+    }
+
+    .project-card {
+      background: var(--panel);
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 190px;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+      border-color: var(--accent);
+    }
+
+    .project-card h4 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .project-card p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .project-card .btn {
+      margin-top: auto;
+    }
+
+    /* Other cards (experience, education, etc.) */
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 14px 0;
+      box-shadow: var(--shadow);
     }
 
     .muted {
@@ -164,7 +212,7 @@
       <h1>Or Saban</h1>
       <h2>Computer Science Student</h2>
       <p class="tagline">
-        Passionate about algorithms, system programming, and building useful software.  
+        Passionate about algorithms, system programming, and building useful software.
         Based in Nahariya, Israel.
       </p>
       <div class="cta">
@@ -196,23 +244,31 @@
       <div class="container">
         <h3>Projects</h3>
         <div class="projects-grid">
-          <article class="card">
+
+          <article class="project-card">
             <h4>Trading Bot</h4>
             <p>Algorithmic trading strategies with Binance API & Interactive Brokers API.</p>
-            <a class="btn" href="https://github.com/Ors9/algotradingbot" target="_blank">GitHub</a>
+            <a class="btn" href="https://github.com/Ors9/algotradingbot" target="_blank">GitHub Rep</a>
           </article>
 
-          <article class="card">
+          <article class="project-card">
             <h4>Assembler (C)</h4>
             <p>Two-pass assembler with macro preprocessing, symbol tables, and error reporting.</p>
-            <a class="btn" href="https://github.com/Ors9/assembler" target="_blank">GitHub</a>
+            <a class="btn" href="https://github.com/Ors9/assembler" target="_blank">GitHub Rep</a>
           </article>
 
-          <article class="card">
+          <article class="project-card">
             <h4>Android + JavaFX Calculator</h4>
             <p>Modern GUI calculator with operator precedence and a clean UI.</p>
-            <a class="btn" href="https://github.com/Ors9/Calculator-App" target="_blank">GitHub</a>
+            <a class="btn" href="https://github.com/Ors9/Calculator-App" target="_blank">GitHub Rep</a>
           </article>
+
+          <article class="project-card">
+            <h4>More Projects</h4>
+            <p>Explore additional repositories and practice work on my GitHub profile.</p>
+            <a class="btn" href="https://github.com/Ors9" target="_blank">GitHub Profile</a>
+          </article>
+
         </div>
       </div>
     </section>
@@ -222,8 +278,7 @@
         <h3>Experience</h3>
         <div class="card">
           <ul>
-            <li>Private tutor — helped Computer Science students with Java, C, and Algorithms</li>
-            <li>Freelance — built and sold academic projects in programming</li>
+            <li>Private tutor — helped Computer Science students C Assembler project</li>
             <li>IDF Service — mandatory service + 1 year career service + active reserve duty</li>
           </ul>
         </div>
@@ -235,12 +290,13 @@
         <h3>Education</h3>
         <div class="card">
           <p><strong>B.Sc. Computer Science</strong>, The Open University of Israel</p>
-          <p>GPA: 89/100 • Completed 70/120 credits • Expected graduation: 2027</p>
+          <p>GPA: 89/100 • Completed 70/120 credits.</p>
         </div>
         <div class="card">
           <p><strong>Practical Engineer in Mechanical Engineering</strong></p>
-          <p>Ort Braude College • Completed [Year] • Strong background in math and problem solving</p>
+          <p>Completed diploma in Mechanical Engineering</p>
         </div>
+      </div>
       </div>
     </section>
 
@@ -259,4 +315,5 @@
     <div class="container">© 2025 Or Saban</div>
   </footer>
 </body>
+
 </html>
